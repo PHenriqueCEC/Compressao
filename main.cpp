@@ -138,10 +138,9 @@ int selectOutput()
 
 void lzwCompression(vector<string> &dictionary, vector<int> &codified, string &aux)
 {
-    int index;
     char aux2 = aux[0];
-    string p(1, aux2);
-    string c;
+    int index;
+    string c, p(1, aux2);    
 
     for (int i = 1; i < aux.size(); i++)
     {
@@ -152,7 +151,7 @@ void lzwCompression(vector<string> &dictionary, vector<int> &codified, string &a
         {
             p = p + c;
         }
-
+        
         else
         {
             vector<string>::iterator itP = find(dictionary.begin(), dictionary.end(), p);
@@ -169,9 +168,9 @@ void lzwCompression(vector<string> &dictionary, vector<int> &codified, string &a
 
 void addCharInDictionary(vector<string> &dictionary, string aux)
 {
-    char c = aux[0];
+    char c;
 
-    for (int i = 1; i <= aux.size(); i++)
+    for (int i = 0; i <= aux.size(); i++)
     {
         c = aux[i];
         string aux(1, c);
@@ -195,6 +194,7 @@ string readTxt(ifstream &inputFile, string &aux, ofstream &outputFile, int choic
     if(choice == 1)
     {
         outputFile << "Entrada: " << aux << endl;
+        outputFile << endl;
     }
 
     else

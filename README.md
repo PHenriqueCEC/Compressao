@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Atividade prática de Estrutura de Dados. Esta atividade consiste em implementar o algoritmo de compressão LZW (Lempel–Ziv–Welch).
+> Atividade prática de Estrutura de Dados 2. Esta atividade consiste em implementar o algoritmo de compressão LZW (Lempel–Ziv–Welch).
 
 👤 **Pedro Henrique**
 
