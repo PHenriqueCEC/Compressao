@@ -40,7 +40,7 @@ string decoding(vector<string> &dictionary, vector<int> &codified)
     {
         index = codified[i];
         aux = dictionary[index];
-        result = result + aux;
+        result += aux;
     }
     return result;
 }
@@ -145,24 +145,25 @@ void lzwCompression(vector<string> &dictionary, vector<int> &codified, string &a
     for (int i = 1; i < aux.size(); i++)
     {
         c = aux[i];
-        vector<string>::iterator it = find(dictionary.begin(), dictionary.end(), p + c);
+        vector<string>::iterator iterator = find(dictionary.begin(), dictionary.end(), p + c);
 
-        if (it != dictionary.end())
+        if (iterator != dictionary.end())
         {
-            p = p + c;
+            p += c;
         }
         
         else
         {
-            vector<string>::iterator itP = find(dictionary.begin(), dictionary.end(), p);
-            index = distance(dictionary.begin(), itP);
-            codified.push_back(index);
+            vector<string>::iterator iteratorP = find(dictionary.begin(), dictionary.end(), p);
+            index = distance(dictionary.begin(), iteratorP);
             dictionary.push_back(p + c);
+            codified.push_back(index);
             p = c;
         }
     }
-    vector<string>::iterator itP = find(dictionary.begin(), dictionary.end(), p);
-    index = distance(dictionary.begin(), itP);
+
+    vector<string>::iterator iteratorP = find(dictionary.begin(), dictionary.end(), p);
+    index = distance(dictionary.begin(), iteratorP);
     codified.push_back(index);
 }
 
